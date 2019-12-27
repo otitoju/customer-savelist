@@ -13,6 +13,6 @@ router.put('/api/v1/user/put/:id', userController.updateUser)
 // product routes
 router.post('/api/v1/product/create/:userId', productcontroller.createProduct)
 router.put('/api/v1/product/put/:userId/product/:productId', productcontroller.updateProduct)
-router.delete('/api/v1/product/put/:userId/product/:productId', productcontroller.deleteProduct)
+router.delete('/api/v1/product/del/:userId/product/:productId', productcontroller.deleteProduct)
 
 module.exports = router;

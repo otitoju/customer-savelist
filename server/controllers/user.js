@@ -40,9 +40,16 @@ class UserController {
     try {
       const { userId } = req.params
       const info = await UserService.getSingleUser( userId )
-      return res.status(200).json({
-        info: info
-      })
+      if(info) {
+        return res.status(200).json({
+          info: info
+        })
+      }
+      else {
+        return res.status(404).json({
+          message: 'User not found'
+        })
+      }
     } catch (e) {
       console.log(e.message)
       return res.status(500).json({error:e.message})
